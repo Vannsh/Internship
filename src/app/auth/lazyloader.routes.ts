@@ -14,7 +14,7 @@ export const appRoutes: Routes = [{
         { path: 'pages', loadChildren: () => import('../pages/pages.module').then(m => m.PagesModule) },
         { path: 'forms', loadChildren: () => import('../forms/forms.module').then(m => m.FormModule) }, //fix this
         { path: 'guarded-routes', loadChildren: () => import('../guarded-routes/guarded-routes.module').then(m => m.GuardedRoutesModule) },
-        // { path: 'editor', loadChildren: () => import('../editor/editor.module').then(m => m.EditorModule) }, 
+       // { path: 'editor', loadChildren: () => import('../editor/editor.module').then(m => m.EditorModule) }, 
         { path: 'scrumboard', loadChildren: () => import('../scrumboard/scrumboard.module').then(m => m.ScrumboardModule) },
     ]
 }];

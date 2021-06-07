@@ -5,6 +5,7 @@ import {fromEvent as observableFromEvent,  Observable } from 'rxjs';
 import {distinctUntilChanged, debounceTime} from 'rxjs/operators';
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { ExampleDatabase, ExampleDataSource } from './helpers.data';
+import { GridRowStyleBuilder } from '@angular/flex-layout/grid/typings/row/row';
 
 @Component({
   selector: 'cdk-filter-table',
@@ -14,12 +15,14 @@ import { ExampleDatabase, ExampleDataSource } from './helpers.data';
 export class FilterTableComponent implements OnInit {
 
   public displayedColumns = ['userId', 'userName', 'progress', 'color'];
+  
   public exampleDatabase = new ExampleDatabase();
   public dataSource: ExampleDataSource | null;
   public showFilterTableCode;
   @ViewChild('filter', { static: true }) filter: ElementRef;
 
   constructor() { }
+
 
     ngOnInit() {
       // this.dataSource = new DataSource(this.exampleDatabase);
@@ -31,7 +34,11 @@ export class FilterTableComponent implements OnInit {
         .subscribe(() => {
           if (!this.dataSource) { return; }
           this.dataSource.filter = this.filter.nativeElement.value;
+          console.log(this.filter.nativeElement.value);
         });
     }
+    
+
+  
 
 }

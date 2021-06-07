@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+import{ ToolbarHelpers} from '../core/toolbar/toolbar.helpers';
 
 @Component({
   selector: 'app-scrumboard',
@@ -14,6 +15,12 @@ export class ScrumboardComponent {
   testers: Array<string> = [];
 
   drop(event: CdkDragDrop<string[]>) {
+    ToolbarHelpers?.notifications.push({
+      id:'id',
+      title: 'Mail New',
+      lastTime:'23 Minutes ago',
+      state: 'state'
+    },);
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {

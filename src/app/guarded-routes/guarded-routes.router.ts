@@ -42,8 +42,8 @@ export const routes: Routes = [
   {
     path: '', component: GuardedRoutesComponent,
     children: [
-      { path: 'example', component: RouterComponent, canActivate: [CanActivateTeam] },
-      { path: 'ex', component: RouterDeactivateComponent, canActivate: [CanActivateTeam] }
+      { path: 'example', component: RouterComponent },
+      { path: 'ex', component: RouterDeactivateComponent }
     ]
   }
 ];
